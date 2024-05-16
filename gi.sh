@@ -1,6 +1,6 @@
 #!/bin/bash
 
-## ADD, COMMIT and PUSH
+## git ADD, COMMIT and PUSH
 
 git add .
 git commit -m "$1"
