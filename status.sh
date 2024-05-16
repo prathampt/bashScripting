@@ -8,34 +8,47 @@
 # - Kernel version
 ###
 
+###
+# Color Variables
+###
+
+green="\e[32m"
+red="\e[31m"
+blue="\e[34m"
+clear="\e[30m"
+
 server_name=$(hostname)
 
 function memory_check() {
-    echo
+    echo -ne $blue
     echo "Memory usage on ${server_name} is: "
+    echo -ne $green
     free -h
-    echo
+    echo -e $clear
 }
 
 function cpu_check() {
-    echo
+    echo -ne $blue
     echo "CPU load on ${server_name} is: "
+    echo -ne $green
     uptime
-    echo
+    echo -e $clear
 }
 
 function tcp_check() {
-    echo
+    echo -ne $blue
     echo "TCP connections on ${server_name}: "
+    echo -ne $green
     cat /proc/net/tcp | wc -l
-    echo 
+    echo -e $clear
 }
 
 function kernel_check() {
-    echo
+    echo -ne $blue
     echo "Kernel version on ${server_name} is: "
+    echo -ne $green
     uname -r
-    echo
+    echo -e $clear
 }
 
 function all_checks() {
